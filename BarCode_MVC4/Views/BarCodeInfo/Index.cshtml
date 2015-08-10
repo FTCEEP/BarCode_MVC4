@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "盤點資訊";
+}
+
+<link href="~/CSS/InfoStyle.css" rel="stylesheet" />
+<head>
+    <title></title>
+    @*<script type="text/javascript">
+        function test()
+        {
+            jsResultinterface.resultStr(@ViewData["test"]);
+        }
+       
+        function CheckResult() {
+            @ViewData["test"];
+        }
+        var String = window.jsinterface.getSomeString();
+    </script>*@
+</head>
+<body>
+    @*<a onclick="window.demo.clickOnAndroid()">
+
+    </a>*@
+        <article>
+            <div class="divStyle">
+                @*<fieldset class="fieldset">
+                    <legend>盤點人：</legend>
+                    <p class="p1Style">
+                        @ViewData["StaffInfo"]
+                    </p>
+                </fieldset>
+                <fieldset class="fieldset">
+                    <legend>盤點資料：</legend>
+                    <p class="p2Style">
+                        <table class="InfoTable">
+                            <tr>
+                                <td colspan="4">庫位：@ViewData["ZoneInfo"]</td>
+                            </tr>
+                            <tr>
+                                <td>種類：</td>
+                                <td>@ViewBag.Type</td>
+                                <td>支號：</td>
+                                <td>@ViewBag.Prod</td>
+                            </tr>
+                            <tr>
+                                <td>長度：</td>
+                                <td>@ViewBag.Leng</td>
+                                <td>寬度：</td>
+                                <td>@ViewBag.Width</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">料號：</td>
+                                <td colspan="3">@ViewBag.Ptno</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">製造日期：@ViewBag.ProductDate</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">@ViewBag.msg</td>
+                            </tr>
+                        </table>
+                    </p>
+                </fieldset>*@
+                <fieldset class="fieldset">
+                    <legend>訊息：</legend>
+                    <p class="p1Style">
+                        @ViewBag.msg
+                    </p>
+                </fieldset>
+            </div>
+        </article>
+</body>
+    

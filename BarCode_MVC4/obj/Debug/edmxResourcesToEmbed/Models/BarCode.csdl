@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BarCodeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BarCodeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClearInventory" EntityType="BarCodeModel.ClearInventory" />
+    <EntitySet Name="Customer" EntityType="BarCodeModel.Customer" />
+    <EntitySet Name="HistoryInventory" EntityType="BarCodeModel.HistoryInventory" />
+    <EntitySet Name="ImportInventory" EntityType="BarCodeModel.ImportInventory" />
+    <EntitySet Name="Note" EntityType="BarCodeModel.Note" />
+    <EntitySet Name="PackagingMaterial" EntityType="BarCodeModel.PackagingMaterial" />
+    <EntitySet Name="Role" EntityType="BarCodeModel.Role" />
+    <EntitySet Name="Srnm" EntityType="BarCodeModel.Srnm" />
+    <EntitySet Name="Staff" EntityType="BarCodeModel.Staff" />
+    <EntitySet Name="TempInventory" EntityType="BarCodeModel.TempInventory" />
+    <EntitySet Name="Zone" EntityType="BarCodeModel.Zone" />
+    <EntitySet Name="FunctionList" EntityType="BarCodeModel.FunctionList" />
+    <EntitySet Name="Staff_View" EntityType="BarCodeModel.Staff_View" />
+    <EntitySet Name="ClearInventory_View" EntityType="BarCodeModel.ClearInventory_View" />
+    <EntitySet Name="HistoryInventory_View" EntityType="BarCodeModel.HistoryInventory_View" />
+    <EntitySet Name="ImportInventory_View" EntityType="BarCodeModel.ImportInventory_View" />
+    <EntitySet Name="Inventory" EntityType="BarCodeModel.Inventory" />
+    <EntitySet Name="Inventory_View" EntityType="BarCodeModel.Inventory_View" />
+    <EntitySet Name="APKFile" EntityType="BarCodeModel.APKFile" />
+    <EntitySet Name="SysPara" EntityType="BarCodeModel.SysPara" />
+  </EntityContainer>
+  <EntityType Name="ClearInventory">
+    <Key>
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerNo" />
+    </Key>
+    <Property Name="CustomerNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HistoryInventory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ImportInventory">
+    <Key>
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="CtlNo" />
+    </Key>
+    <Property Name="CtlNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PackagingMaterial">
+    <Key>
+      <PropertyRef Name="PackNo" />
+    </Key>
+    <Property Name="PackNo" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PackName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleType" />
+    </Key>
+    <Property Name="RoleType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Srnm">
+    <Key>
+      <PropertyRef Name="SrnmType" />
+    </Key>
+    <Property Name="SrnmType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DecryptionPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TempInventory">
+    <Key>
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Zone">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FunctionList">
+    <Key>
+      <PropertyRef Name="NodeID" />
+    </Key>
+    <Property Name="NodeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NodeText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NodeSequence" Type="Int32" />
+    <Property Name="NodeURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FunctionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Staff_View">
+    <Key>
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="DecryptionPassword" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DecryptionPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ClearInventory_View">
+    <Key>
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HistoryInventory_View">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ImportInventory_View">
+    <Key>
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Inventory_View">
+    <Key>
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="Prod" />
+    </Key>
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Leng" Type="Int32" />
+    <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="NewWeight" Type="Double" />
+    <Property Name="GrossWeight" Type="Double" />
+    <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="DateTime" Precision="0" />
+    <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+    <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APKFile">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SysPara">
+    <Key>
+      <PropertyRef Name="ParaName" />
+    </Key>
+    <Property Name="ParaName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ParaValue" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,1275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BarCodeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="APKFile">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ClearInventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerNo" />
+          </Key>
+          <Property Name="CustomerNo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BarCode.dbo.FunctionList' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="FunctionList">
+          <Key>
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="NodeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentID" Type="nvarchar" MaxLength="50" />
+          <Property Name="NodeText" Type="nvarchar" MaxLength="100" />
+          <Property Name="NodeSequence" Type="int" />
+          <Property Name="NodeURL" Type="nvarchar" MaxLength="200" />
+          <Property Name="FunctionID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="HistoryInventory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="ImportInventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="CtlNo" />
+          </Key>
+          <Property Name="CtlNo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CtlName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PackagingMaterial">
+          <Key>
+            <PropertyRef Name="PackNo" />
+          </Key>
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="PackName" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleType" />
+          </Key>
+          <Property Name="RoleType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Srnm">
+          <Key>
+            <PropertyRef Name="SrnmType" />
+          </Key>
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SrnmName" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Account" />
+          </Key>
+          <Property Name="Account" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DecryptionPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SysPara">
+          <Key>
+            <PropertyRef Name="ParaName" />
+          </Key>
+          <Property Name="ParaName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ParaValue" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempInventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BarCode.dbo.ClearInventory_View' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="ClearInventory_View">
+          <Key>
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="SrnmName" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+          <Property Name="CtlName1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CtlName2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BarCode.dbo.HistoryInventory_View' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="HistoryInventory_View">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="SrnmName" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+          <Property Name="CtlName1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CtlName2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BarCode.dbo.ImportInventory_View' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="ImportInventory_View">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="SrnmName" Type="nvarchar" MaxLength="20" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+          <Property Name="CtlName1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CtlName2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BarCode.dbo.Inventory_View' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Inventory_View">
+          <Key>
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Prod" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Thickness" Type="nvarchar" MaxLength="50" />
+          <Property Name="Widt" Type="nvarchar" MaxLength="4" />
+          <Property Name="Leng" Type="int" />
+          <Property Name="Splice" Type="nvarchar" MaxLength="5" />
+          <Property Name="NewWeight" Type="float" />
+          <Property Name="GrossWeight" Type="float" />
+          <Property Name="Ptno" Type="nvarchar" MaxLength="24" />
+          <Property Name="ProductDate" Type="date" />
+          <Property Name="PackNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="StaffID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="1" />
+          <Property Name="TransactionDate" Type="date" />
+          <Property Name="SrnmType" Type="nvarchar" MaxLength="1" />
+          <Property Name="SrnmName" Type="nvarchar" MaxLength="20" />
+          <Property Name="CtlNo1" Type="nvarchar" MaxLength="10" />
+          <Property Name="CtlNo2" Type="nvarchar" MaxLength="10" />
+          <Property Name="ZoneSN" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="4" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="Thickness2" Type="nvarchar" MaxLength="5" />
+          <Property Name="CtlName1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CtlName2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BarCode.dbo.Staff_View' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Staff_View">
+          <Key>
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="DecryptionPassword" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="Account" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DecryptionPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="10" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BarCodeModelStoreContainer">
+          <EntitySet Name="APKFile" EntityType="Self.APKFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClearInventory" EntityType="Self.ClearInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryInventory" EntityType="Self.HistoryInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImportInventory" EntityType="Self.ImportInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Note" EntityType="Self.Note" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackagingMaterial" EntityType="Self.PackagingMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Srnm" EntityType="Self.Srnm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysPara" EntityType="Self.SysPara" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TempInventory" EntityType="Self.TempInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zone" EntityType="Self.Zone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FunctionList" EntityType="Self.FunctionList" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FunctionList].[NodeID] AS [NodeID], 
+    [FunctionList].[ParentID] AS [ParentID], 
+    [FunctionList].[NodeText] AS [NodeText], 
+    [FunctionList].[NodeSequence] AS [NodeSequence], 
+    [FunctionList].[NodeURL] AS [NodeURL], 
+    [FunctionList].[FunctionID] AS [FunctionID], 
+    [FunctionList].[Description] AS [Description]
+    FROM [dbo].[FunctionList] AS [FunctionList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ClearInventory_View" EntityType="Self.ClearInventory_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ClearInventory_View].[Type] AS [Type], 
+    [ClearInventory_View].[Prod] AS [Prod], 
+    [ClearInventory_View].[Thickness] AS [Thickness], 
+    [ClearInventory_View].[Widt] AS [Widt], 
+    [ClearInventory_View].[Leng] AS [Leng], 
+    [ClearInventory_View].[Splice] AS [Splice], 
+    [ClearInventory_View].[Ptno] AS [Ptno], 
+    [ClearInventory_View].[ProductDate] AS [ProductDate], 
+    [ClearInventory_View].[PackNo] AS [PackNo], 
+    [ClearInventory_View].[StaffID] AS [StaffID], 
+    [ClearInventory_View].[TransactionDate] AS [TransactionDate], 
+    [ClearInventory_View].[SrnmType] AS [SrnmType], 
+    [ClearInventory_View].[CtlNo1] AS [CtlNo1], 
+    [ClearInventory_View].[CtlNo2] AS [CtlNo2], 
+    [ClearInventory_View].[NewWeight] AS [NewWeight], 
+    [ClearInventory_View].[GrossWeight] AS [GrossWeight], 
+    [ClearInventory_View].[ZoneSN] AS [ZoneSN], 
+    [ClearInventory_View].[ZoneID] AS [ZoneID], 
+    [ClearInventory_View].[SrnmName] AS [SrnmName], 
+    [ClearInventory_View].[ZoneNo] AS [ZoneNo], 
+    [ClearInventory_View].[CustomerName] AS [CustomerName], 
+    [ClearInventory_View].[CustomerNO] AS [CustomerNO], 
+    [ClearInventory_View].[Thickness2] AS [Thickness2], 
+    [ClearInventory_View].[CtlName1] AS [CtlName1], 
+    [ClearInventory_View].[CtlName2] AS [CtlName2]
+    FROM [dbo].[ClearInventory_View] AS [ClearInventory_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HistoryInventory_View" EntityType="Self.HistoryInventory_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HistoryInventory_View].[ID] AS [ID], 
+    [HistoryInventory_View].[Type] AS [Type], 
+    [HistoryInventory_View].[Prod] AS [Prod], 
+    [HistoryInventory_View].[Thickness] AS [Thickness], 
+    [HistoryInventory_View].[Widt] AS [Widt], 
+    [HistoryInventory_View].[Leng] AS [Leng], 
+    [HistoryInventory_View].[Splice] AS [Splice], 
+    [HistoryInventory_View].[Ptno] AS [Ptno], 
+    [HistoryInventory_View].[ProductDate] AS [ProductDate], 
+    [HistoryInventory_View].[PackNo] AS [PackNo], 
+    [HistoryInventory_View].[StaffID] AS [StaffID], 
+    [HistoryInventory_View].[TransactionDate] AS [TransactionDate], 
+    [HistoryInventory_View].[SrnmType] AS [SrnmType], 
+    [HistoryInventory_View].[CtlNo1] AS [CtlNo1], 
+    [HistoryInventory_View].[CtlNo2] AS [CtlNo2], 
+    [HistoryInventory_View].[NewWeight] AS [NewWeight], 
+    [HistoryInventory_View].[GrossWeight] AS [GrossWeight], 
+    [HistoryInventory_View].[ZoneSN] AS [ZoneSN], 
+    [HistoryInventory_View].[ZoneID] AS [ZoneID], 
+    [HistoryInventory_View].[SrnmName] AS [SrnmName], 
+    [HistoryInventory_View].[ZoneNo] AS [ZoneNo], 
+    [HistoryInventory_View].[CustomerName] AS [CustomerName], 
+    [HistoryInventory_View].[CustomerNO] AS [CustomerNO], 
+    [HistoryInventory_View].[Thickness2] AS [Thickness2], 
+    [HistoryInventory_View].[CtlName1] AS [CtlName1], 
+    [HistoryInventory_View].[CtlName2] AS [CtlName2]
+    FROM [dbo].[HistoryInventory_View] AS [HistoryInventory_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ImportInventory_View" EntityType="Self.ImportInventory_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ImportInventory_View].[Type] AS [Type], 
+    [ImportInventory_View].[Prod] AS [Prod], 
+    [ImportInventory_View].[Thickness] AS [Thickness], 
+    [ImportInventory_View].[Widt] AS [Widt], 
+    [ImportInventory_View].[Leng] AS [Leng], 
+    [ImportInventory_View].[Splice] AS [Splice], 
+    [ImportInventory_View].[Ptno] AS [Ptno], 
+    [ImportInventory_View].[ProductDate] AS [ProductDate], 
+    [ImportInventory_View].[PackNo] AS [PackNo], 
+    [ImportInventory_View].[StaffID] AS [StaffID], 
+    [ImportInventory_View].[TransactionDate] AS [TransactionDate], 
+    [ImportInventory_View].[SrnmType] AS [SrnmType], 
+    [ImportInventory_View].[CtlNo1] AS [CtlNo1], 
+    [ImportInventory_View].[CtlNo2] AS [CtlNo2], 
+    [ImportInventory_View].[NewWeight] AS [NewWeight], 
+    [ImportInventory_View].[GrossWeight] AS [GrossWeight], 
+    [ImportInventory_View].[ZoneSN] AS [ZoneSN], 
+    [ImportInventory_View].[ZoneID] AS [ZoneID], 
+    [ImportInventory_View].[SrnmName] AS [SrnmName], 
+    [ImportInventory_View].[ZoneNo] AS [ZoneNo], 
+    [ImportInventory_View].[CustomerName] AS [CustomerName], 
+    [ImportInventory_View].[CustomerNO] AS [CustomerNO], 
+    [ImportInventory_View].[Thickness2] AS [Thickness2], 
+    [ImportInventory_View].[CtlName1] AS [CtlName1], 
+    [ImportInventory_View].[CtlName2] AS [CtlName2]
+    FROM [dbo].[ImportInventory_View] AS [ImportInventory_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Inventory_View" EntityType="Self.Inventory_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Inventory_View].[Type] AS [Type], 
+    [Inventory_View].[Prod] AS [Prod], 
+    [Inventory_View].[Thickness] AS [Thickness], 
+    [Inventory_View].[Widt] AS [Widt], 
+    [Inventory_View].[Leng] AS [Leng], 
+    [Inventory_View].[Splice] AS [Splice], 
+    [Inventory_View].[NewWeight] AS [NewWeight], 
+    [Inventory_View].[GrossWeight] AS [GrossWeight], 
+    [Inventory_View].[Ptno] AS [Ptno], 
+    [Inventory_View].[ProductDate] AS [ProductDate], 
+    [Inventory_View].[PackNo] AS [PackNo], 
+    [Inventory_View].[StaffID] AS [StaffID], 
+    [Inventory_View].[ZoneID] AS [ZoneID], 
+    [Inventory_View].[TransactionDate] AS [TransactionDate], 
+    [Inventory_View].[SrnmType] AS [SrnmType], 
+    [Inventory_View].[SrnmName] AS [SrnmName], 
+    [Inventory_View].[CtlNo1] AS [CtlNo1], 
+    [Inventory_View].[CtlNo2] AS [CtlNo2], 
+    [Inventory_View].[ZoneSN] AS [ZoneSN], 
+    [Inventory_View].[ZoneNo] AS [ZoneNo], 
+    [Inventory_View].[CustomerName] AS [CustomerName], 
+    [Inventory_View].[CustomerNO] AS [CustomerNO], 
+    [Inventory_View].[Thickness2] AS [Thickness2], 
+    [Inventory_View].[CtlName1] AS [CtlName1], 
+    [Inventory_View].[CtlName2] AS [CtlName2]
+    FROM [dbo].[Inventory_View] AS [Inventory_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Staff_View" EntityType="Self.Staff_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Staff_View].[Account] AS [Account], 
+    [Staff_View].[Name] AS [Name], 
+    [Staff_View].[Password] AS [Password], 
+    [Staff_View].[DecryptionPassword] AS [DecryptionPassword], 
+    [Staff_View].[Role] AS [Role], 
+    [Staff_View].[RoleName] AS [RoleName]
+    FROM [dbo].[Staff_View] AS [Staff_View]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BarCodeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BarCodeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClearInventory" EntityType="BarCodeModel.ClearInventory" />
+          <EntitySet Name="Customer" EntityType="BarCodeModel.Customer" />
+          <EntitySet Name="HistoryInventory" EntityType="BarCodeModel.HistoryInventory" />
+          <EntitySet Name="ImportInventory" EntityType="BarCodeModel.ImportInventory" />
+          <EntitySet Name="Note" EntityType="BarCodeModel.Note" />
+          <EntitySet Name="PackagingMaterial" EntityType="BarCodeModel.PackagingMaterial" />
+          <EntitySet Name="Role" EntityType="BarCodeModel.Role" />
+          <EntitySet Name="Srnm" EntityType="BarCodeModel.Srnm" />
+          <EntitySet Name="Staff" EntityType="BarCodeModel.Staff" />
+          <EntitySet Name="TempInventory" EntityType="BarCodeModel.TempInventory" />
+          <EntitySet Name="Zone" EntityType="BarCodeModel.Zone" />
+          <EntitySet Name="FunctionList" EntityType="BarCodeModel.FunctionList" />
+          <EntitySet Name="Staff_View" EntityType="BarCodeModel.Staff_View" />
+          <EntitySet Name="ClearInventory_View" EntityType="BarCodeModel.ClearInventory_View" />
+          <EntitySet Name="HistoryInventory_View" EntityType="BarCodeModel.HistoryInventory_View" />
+          <EntitySet Name="ImportInventory_View" EntityType="BarCodeModel.ImportInventory_View" />
+          <EntitySet Name="Inventory" EntityType="BarCodeModel.Inventory" />
+          <EntitySet Name="Inventory_View" EntityType="BarCodeModel.Inventory_View" />
+          <EntitySet Name="APKFile" EntityType="BarCodeModel.APKFile" />
+          <EntitySet Name="SysPara" EntityType="BarCodeModel.SysPara" />
+        </EntityContainer>
+        <EntityType Name="ClearInventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerNo" />
+          </Key>
+          <Property Name="CustomerNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HistoryInventory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ImportInventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="CtlNo" />
+          </Key>
+          <Property Name="CtlNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PackagingMaterial">
+          <Key>
+            <PropertyRef Name="PackNo" />
+          </Key>
+          <Property Name="PackNo" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PackName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleType" />
+          </Key>
+          <Property Name="RoleType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Srnm">
+          <Key>
+            <PropertyRef Name="SrnmType" />
+          </Key>
+          <Property Name="SrnmType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Account" />
+          </Key>
+          <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DecryptionPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TempInventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FunctionList">
+          <Key>
+            <PropertyRef Name="NodeID" />
+          </Key>
+          <Property Name="NodeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NodeText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NodeSequence" Type="Int32" />
+          <Property Name="NodeURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FunctionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Staff_View">
+          <Key>
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="DecryptionPassword" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DecryptionPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClearInventory_View">
+          <Key>
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HistoryInventory_View">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ImportInventory_View">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Inventory_View">
+          <Key>
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Prod" />
+          </Key>
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Widt" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Leng" Type="Int32" />
+          <Property Name="Splice" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NewWeight" Type="Double" />
+          <Property Name="GrossWeight" Type="Double" />
+          <Property Name="Ptno" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDate" Type="DateTime" Precision="0" />
+          <Property Name="PackNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="StaffID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="0" />
+          <Property Name="SrnmType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SrnmName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CtlNo2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneSN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CtlName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="APKFile">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SysPara">
+          <Key>
+            <PropertyRef Name="ParaName" />
+          </Key>
+          <Property Name="ParaName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ParaValue" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BarCodeModelStoreContainer" CdmEntityContainer="BarCodeEntities">
+          <EntitySetMapping Name="ClearInventory">
+            <EntityTypeMapping TypeName="BarCodeModel.ClearInventory">
+              <MappingFragment StoreEntitySet="ClearInventory">
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="BarCodeModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryInventory">
+            <EntityTypeMapping TypeName="BarCodeModel.HistoryInventory">
+              <MappingFragment StoreEntitySet="HistoryInventory">
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportInventory">
+            <EntityTypeMapping TypeName="BarCodeModel.ImportInventory">
+              <MappingFragment StoreEntitySet="ImportInventory">
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Note">
+            <EntityTypeMapping TypeName="BarCodeModel.Note">
+              <MappingFragment StoreEntitySet="Note">
+                <ScalarProperty Name="CtlName" ColumnName="CtlName" />
+                <ScalarProperty Name="CtlNo" ColumnName="CtlNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackagingMaterial">
+            <EntityTypeMapping TypeName="BarCodeModel.PackagingMaterial">
+              <MappingFragment StoreEntitySet="PackagingMaterial">
+                <ScalarProperty Name="PackName" ColumnName="PackName" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="BarCodeModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Srnm">
+            <EntityTypeMapping TypeName="BarCodeModel.Srnm">
+              <MappingFragment StoreEntitySet="Srnm">
+                <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff">
+            <EntityTypeMapping TypeName="BarCodeModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="DecryptionPassword" ColumnName="DecryptionPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempInventory">
+            <EntityTypeMapping TypeName="BarCodeModel.TempInventory">
+              <MappingFragment StoreEntitySet="TempInventory">
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zone">
+            <EntityTypeMapping TypeName="BarCodeModel.Zone">
+              <MappingFragment StoreEntitySet="Zone">
+                <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FunctionList">
+            <EntityTypeMapping TypeName="BarCodeModel.FunctionList">
+              <MappingFragment StoreEntitySet="FunctionList">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="NodeURL" ColumnName="NodeURL" />
+                <ScalarProperty Name="NodeSequence" ColumnName="NodeSequence" />
+                <ScalarProperty Name="NodeText" ColumnName="NodeText" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_View">
+            <EntityTypeMapping TypeName="BarCodeModel.Staff_View">
+              <MappingFragment StoreEntitySet="Staff_View">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="DecryptionPassword" ColumnName="DecryptionPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClearInventory_View">
+            <EntityTypeMapping TypeName="BarCodeModel.ClearInventory_View">
+              <MappingFragment StoreEntitySet="ClearInventory_View">
+                <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+                <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryInventory_View">
+            <EntityTypeMapping TypeName="BarCodeModel.HistoryInventory_View">
+              <MappingFragment StoreEntitySet="HistoryInventory_View">
+                <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+                <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportInventory_View">
+            <EntityTypeMapping TypeName="BarCodeModel.ImportInventory_View">
+              <MappingFragment StoreEntitySet="ImportInventory_View">
+                <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+                <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventory">
+            <EntityTypeMapping TypeName="BarCodeModel.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventory_View">
+            <EntityTypeMapping TypeName="BarCodeModel.Inventory_View">
+              <MappingFragment StoreEntitySet="Inventory_View">
+                <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+                <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+                <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+                <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+                <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+                <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+                <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+                <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+                <ScalarProperty Name="Splice" ColumnName="Splice" />
+                <ScalarProperty Name="Leng" ColumnName="Leng" />
+                <ScalarProperty Name="Widt" ColumnName="Widt" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Prod" ColumnName="Prod" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APKFile">
+            <EntityTypeMapping TypeName="BarCodeModel.APKFile">
+              <MappingFragment StoreEntitySet="APKFile">
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysPara">
+            <EntityTypeMapping TypeName="BarCodeModel.SysPara">
+              <MappingFragment StoreEntitySet="SysPara">
+                <ScalarProperty Name="ParaValue" ColumnName="ParaValue" />
+                <ScalarProperty Name="ParaName" ColumnName="ParaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

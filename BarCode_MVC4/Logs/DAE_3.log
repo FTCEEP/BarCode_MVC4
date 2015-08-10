@@ -1,0 +1,36 @@
+2015/2/13 下午 02:27:27產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.GetZoneID(String sZoneNo) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 798
+   於 BarCode_MVC4.Models.DBOperation.DeviceInventoryIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 499
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 261] 
+
+2015/2/13 下午 02:40:35產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.GetZoneID(String sZoneNo) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 799
+   於 BarCode_MVC4.Models.DBOperation.DeviceInventoryIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 500
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 261] 
+
+2015/2/13 下午 02:42:52產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.GetZoneID(String sZoneNo) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 800
+   於 BarCode_MVC4.Models.DBOperation.InsertTempInventory(List`1 InfoList, String sZoneNo, String sStaffID, String sFuncCode, String sZoneSN, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 670
+   於 BarCode_MVC4.Models.DBOperation.DeviceInventoryIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 520
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 261] 
+
+2015/2/13 下午 02:43:13產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.GetZoneID(String sZoneNo) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 800
+   於 BarCode_MVC4.Models.DBOperation.InsertTempInventory(List`1 InfoList, String sZoneNo, String sStaffID, String sFuncCode, String sZoneSN, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 670
+   於 BarCode_MVC4.Models.DBOperation.DeviceInventoryIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 520
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 261] 
+
+[2015/2/13] | [盤點作業訊息：B341587A2，庫存與實際盤點資料相符!!] 
+
+[2015/2/13] | [盤點作業訊息：B341587A2，庫存與實際盤點資料相符!!] 
+
+2015/2/13 下午 03:26:36產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.DeviceInventoryIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 501
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 261] 
+
+2015/2/13 下午 03:26:51產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.DeviceInventoryIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 501
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 261] 
+
+[2015/2/13] | [盤點作業] | [支號：B341587A2][流水號：13155049] 
+

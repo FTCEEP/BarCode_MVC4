@@ -1,0 +1,21 @@
+2015/4/24 上午 01:09:53產生：[System.FormatException: 輸入字串格式不正確。
+   於 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   於 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   於 System.Int32.Parse(String s)
+   於 BarCode_MVC4.Models.DBOperation.ReceiptIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper, String sCustomer, String sCtlNo1, String sCtlNo2) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 374
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 271] 
+
+[2015/4/24] | [入庫作業訊息：System.Data.Entity.Validation.DbEntityValidationException: 一個或多個實體的驗證失敗。如需詳細資料，請參閱 'EntityValidationErrors' 屬性。
+   於 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   於 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   於 System.Data.Entity.DbContext.SaveChanges()
+   於 BarCode_MVC4.Models.DBOperation.ReceiptIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper, String sCustomer, String sCtlNo1, String sCtlNo2) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 475] 
+
+[2015/4/24] | [入庫作業訊息：System.Data.Entity.Validation.DbEntityValidationException: 一個或多個實體的驗證失敗。如需詳細資料，請參閱 'EntityValidationErrors' 屬性。
+   於 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   於 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   於 System.Data.Entity.DbContext.SaveChanges()
+   於 BarCode_MVC4.Models.DBOperation.ReceiptIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper, String sCustomer, String sCtlNo1, String sCtlNo2)] 
+
+[2015/4/24] | [入庫作業] | [支號：B341507A][流水號：24014353] 
+

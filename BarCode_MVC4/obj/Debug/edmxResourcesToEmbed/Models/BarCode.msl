@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BarCodeModelStoreContainer" CdmEntityContainer="BarCodeEntities">
+    <EntitySetMapping Name="ClearInventory">
+      <EntityTypeMapping TypeName="BarCodeModel.ClearInventory">
+        <MappingFragment StoreEntitySet="ClearInventory">
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="BarCodeModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoryInventory">
+      <EntityTypeMapping TypeName="BarCodeModel.HistoryInventory">
+        <MappingFragment StoreEntitySet="HistoryInventory">
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportInventory">
+      <EntityTypeMapping TypeName="BarCodeModel.ImportInventory">
+        <MappingFragment StoreEntitySet="ImportInventory">
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Note">
+      <EntityTypeMapping TypeName="BarCodeModel.Note">
+        <MappingFragment StoreEntitySet="Note">
+          <ScalarProperty Name="CtlName" ColumnName="CtlName" />
+          <ScalarProperty Name="CtlNo" ColumnName="CtlNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackagingMaterial">
+      <EntityTypeMapping TypeName="BarCodeModel.PackagingMaterial">
+        <MappingFragment StoreEntitySet="PackagingMaterial">
+          <ScalarProperty Name="PackName" ColumnName="PackName" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="BarCodeModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Srnm">
+      <EntityTypeMapping TypeName="BarCodeModel.Srnm">
+        <MappingFragment StoreEntitySet="Srnm">
+          <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="BarCodeModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="DecryptionPassword" ColumnName="DecryptionPassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempInventory">
+      <EntityTypeMapping TypeName="BarCodeModel.TempInventory">
+        <MappingFragment StoreEntitySet="TempInventory">
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone">
+      <EntityTypeMapping TypeName="BarCodeModel.Zone">
+        <MappingFragment StoreEntitySet="Zone">
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionList">
+      <EntityTypeMapping TypeName="BarCodeModel.FunctionList">
+        <MappingFragment StoreEntitySet="FunctionList">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+          <ScalarProperty Name="NodeURL" ColumnName="NodeURL" />
+          <ScalarProperty Name="NodeSequence" ColumnName="NodeSequence" />
+          <ScalarProperty Name="NodeText" ColumnName="NodeText" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff_View">
+      <EntityTypeMapping TypeName="BarCodeModel.Staff_View">
+        <MappingFragment StoreEntitySet="Staff_View">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="DecryptionPassword" ColumnName="DecryptionPassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClearInventory_View">
+      <EntityTypeMapping TypeName="BarCodeModel.ClearInventory_View">
+        <MappingFragment StoreEntitySet="ClearInventory_View">
+          <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+          <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoryInventory_View">
+      <EntityTypeMapping TypeName="BarCodeModel.HistoryInventory_View">
+        <MappingFragment StoreEntitySet="HistoryInventory_View">
+          <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+          <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportInventory_View">
+      <EntityTypeMapping TypeName="BarCodeModel.ImportInventory_View">
+        <MappingFragment StoreEntitySet="ImportInventory_View">
+          <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+          <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory">
+      <EntityTypeMapping TypeName="BarCodeModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_View">
+      <EntityTypeMapping TypeName="BarCodeModel.Inventory_View">
+        <MappingFragment StoreEntitySet="Inventory_View">
+          <ScalarProperty Name="CtlName2" ColumnName="CtlName2" />
+          <ScalarProperty Name="CtlName1" ColumnName="CtlName1" />
+          <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+          <ScalarProperty Name="CustomerNO" ColumnName="CustomerNO" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+          <ScalarProperty Name="ZoneSN" ColumnName="ZoneSN" />
+          <ScalarProperty Name="CtlNo2" ColumnName="CtlNo2" />
+          <ScalarProperty Name="CtlNo1" ColumnName="CtlNo1" />
+          <ScalarProperty Name="SrnmName" ColumnName="SrnmName" />
+          <ScalarProperty Name="SrnmType" ColumnName="SrnmType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PackNo" ColumnName="PackNo" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Ptno" ColumnName="Ptno" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NewWeight" ColumnName="NewWeight" />
+          <ScalarProperty Name="Splice" ColumnName="Splice" />
+          <ScalarProperty Name="Leng" ColumnName="Leng" />
+          <ScalarProperty Name="Widt" ColumnName="Widt" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Prod" ColumnName="Prod" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APKFile">
+      <EntityTypeMapping TypeName="BarCodeModel.APKFile">
+        <MappingFragment StoreEntitySet="APKFile">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysPara">
+      <EntityTypeMapping TypeName="BarCodeModel.SysPara">
+        <MappingFragment StoreEntitySet="SysPara">
+          <ScalarProperty Name="ParaValue" ColumnName="ParaValue" />
+          <ScalarProperty Name="ParaName" ColumnName="ParaName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

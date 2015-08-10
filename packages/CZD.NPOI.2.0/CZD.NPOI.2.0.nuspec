@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>CZD.NPOI</id>
+    <version>2.0</version>
+    <title>npoi</title>
+    <authors>chengzd</authors>
+    <owners>chengzd</owners>
+    <projectUrl>http://npoi.codeplex.com/releases</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>使用http://npoi.codeplex.com/releases 2.0打包</description>
+    <releaseNotes>使用http://npoi.codeplex.com/releases 2.0打包
+详细信息请参考该网页</releaseNotes>
+    <tags>npoi</tags>
+  </metadata>
+</package>

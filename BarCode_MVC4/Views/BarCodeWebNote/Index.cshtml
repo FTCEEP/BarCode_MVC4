@@ -1,0 +1,211 @@
+﻿@{
+    ViewBag.Title = "特殊註記建檔作業";
+    Layout = "~/Views/Master/_Layout.cshtml";
+}
+<head>
+    <title></title>
+    <link href="~/CSS/WebStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content" class="background">
+        <section>
+            <header>
+                @using (Html.BeginForm())
+                {
+                    <fieldset>
+                        <legend>特殊註記查詢</legend>
+                        <table>
+                            <tr>
+                                <td>註記代號：<input type="search" id="CtlNo" /></td>
+                                <td>註記名稱：<input type="search" id="CtlName" /></td>
+                                <td><input id="bnQuery" type="button" value="查詢" onclick="javascript:QueryCommand();" /></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                }
+            </header>
+            <article>
+                <div id="NoteGrid"></div>
+                <script>
+                    //查詢按鈕的事件
+                    function QueryCommand() {
+                        var _CtlNo = $("#CtlNo").val();
+                        var _CtlName = $("#CtlName").val();
+
+                        NoteList.query({
+                            page: 1,
+                            pageSize: NoteList.pageSize(),
+                            skip: NoteList.skip(),
+                            take: NoteList.take(),
+                            filter: [
+                                { field: "CtlNo", value: _CtlNo },
+                                { field: "CtlName", value: _CtlName }
+                            ]
+                        });
+                        //gridview導回第一頁
+                        NoteList.read({ page: 1, skip: 0 });
+                        //grid重新refresh
+                        $("#NoteGrid").data("kendoGrid").refresh();
+                    }
+
+                    //查詢條件
+                    function ConverToFilter(filters) {
+                        var strFilters = "";
+                        if (filters) {
+                            for (var i = 0; i < filters.filters.length; i++) {
+                                if (filters.filters[i].value != "") {
+                                    strFilters += filters.filters[i].value + ",";
+                                }
+                                else {
+                                    strFilters += " " + ",";
+                                }
+                            }
+                        }
+                        return strFilters;
+                    }
+
+                    //建立datasource
+                    var NoteList = new kendo.data.DataSource({
+                        pageSize: 40,
+                        //啟用server端分頁功能
+                        serverPaging: true,
+                        //啟用server端排序功能
+                        serverSorting: true,
+                        //啟用server端篩選功能
+                        serverFiltering: true,
+
+                        schema: {
+                            model: {
+                                id: "CtlNo",
+                                fields: {
+                                    CtlNo: { type: "String" },
+                                    CtlName: { type: "String" }
+                                }
+                            },
+                            data: function (data) {
+                                //顯示資料
+                                return data.InfoList;
+                            },
+                            total: function (data) {
+                                //資料筆數總計
+                                return data.InfoCount;
+                            }
+                        },
+                        batch: true,
+                        transport: {
+                            read: {
+                                url: "@Url.Action("Read", "BarCodeWebNote")",
+                                contentType: 'application/json; charset=utf-8',
+                                type: "POST",
+                                dataType: "json"
+                            },
+                            create: {
+                                url: "@Url.Action("CreateNote", "BarCodeWebNote")",
+                                dataType: "json",
+                                type: "POST",
+                                //complete: function (response, status) {
+                                //    //alert(response.responseJSON);
+                                //}
+                            },
+                            update: {
+                                url: "@Url.Action("UpdateNote", "BarCodeWebNote")",
+                                dataType: "json",
+                                type: "POST",
+                                //complete: function (response, status) {
+                                //    //alert(response.responseJSON);
+                                //}
+                            },
+                            destroy: {
+                                url: "@Url.Action("DeleteNote", "BarCodeWebNote")",
+                                dataType: "json",
+                                type: "POST",
+                                //complete: function (response, status) {
+                                //    //alert(response.responseJSON);
+                                //}
+                            },
+                            parameterMap: function (options, operation) {
+                                if (operation == "read") {
+                                    var filter = ConverToFilter(options.filter);
+                                    var result = {
+                                        take: options.take,
+                                        skip: options.skip,
+                                        filter: filter
+                                    };
+                                    var resultJson = JSON.stringify(result);
+                                    return resultJson;
+                                } else if (operation !== "read" && options.models) {
+
+                                    var result = {};
+
+                                    for (var i = 0; i < options.models.length; i++) {
+                                        var note = options.models[i];
+
+                                        for (var member in note) {
+                                            result["notes[" + i + "]." + member] = note[member];
+                                        }
+                                    }
+                                    return result;
+                                }
+                            }
+                        },
+                        change: function () {
+                            //分頁設定與資料筆數顯示
+                            $(".k-grid-pager .info").value = "";
+                            var info = $(".k-grid-pager .info");
+                            if (!info.length) {
+                                info = $('<div class="info" style="float:right;"/>').appendTo(".k-grid-pager");
+                            }
+                            info.text(kendo.format("顯示 {0} - {1} ,共 {2} 筆",
+                                                            (this.page() - 1) * this.pageSize() + 1,
+                                                             Math.min(this.page() * this.pageSize(), this.total()),
+                                                             this.total()
+                                               ));
+
+                        }
+                    });
+                    $(document).ready(function () {
+                        $("#NoteGrid").kendoGrid({
+                            type: "json",
+                            height: 402,
+                            pageable: true,
+                            scrollable: true,
+                            sortable: {
+                                mode: "single",
+                                allowUnsort: false
+                            },
+                            dataSource: NoteList,
+                            columns: [
+                               { field: "CtlNo", title: "註記代號", width: "120px" },
+                               { field: "CtlName", title: "註記名稱", width: "120px" },
+                               { command: [{ name: "edit", text: "修改" }, { name: "destroy", text: "刪除" }], title: "", width: "120px" }
+                            ],
+                            toolbar: [{ name: "create", text: "建立註記資料" }],
+                            editable: {
+                                mode: "popup",
+                                update: true
+                            }//,
+                            //edit: function (e) {
+                            //    if (!e.model.isNew()) {
+                            //        var textbox = e.container.find("input[name=CustomerNo]").data("kendoTextBox");
+                            //        textbox.editable(false);
+                            //      }
+                            //}
+                        });
+                        //修改Popup視窗中的Button文字
+                        $("#NoteGrid").on("click", ".k-grid-edit , .k-grid-add", function () {
+                            117
+                            $('.k-grid-update').text('儲存');
+                            118
+                            $('.k-grid-cancel').text('取消');
+                            119
+                            $('.k-window-title').text('編輯視窗');
+                            120
+                        });
+                    });
+                </script>
+            </article>
+            <footer></footer>
+        </section>
+    </div>
+</body>
+

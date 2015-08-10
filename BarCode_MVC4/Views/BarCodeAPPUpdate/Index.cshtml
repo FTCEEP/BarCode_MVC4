@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "APP-版更";
+    Layout = "~/Views/Master/_Layout.cshtml";
+}
+
+<head>
+    <title></title>
+    <link href="~/CSS/LoginStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <section>
+            <header>
+            </header>
+            <article>
+                <table class="table2">
+                    <tr>
+                        <td class="td2_2"></td>
+                        <td class="td2_2">
+                            <div class="divbody">
+                                @using (Html.BeginForm())
+                                {
+                                    <fieldset class="divfieldset">
+                                        <legend>※APP程式下載※</legend>
+                                        <table>
+                                            <tr>
+                                                <td></td>
+                                                <td>檔案名稱</td>
+                                            </tr>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@item.FileID</td>
+                                                    <td style="border-bottom: dashed; border-color: #8f8f8f; border-width: 1px" ><a href="@Url.Action("GetFilePath", new { FileID = item.FileID })">@item.FileName</a></td>
+                                                </tr>
+                                            }
+                                        </table>
+                                    </fieldset>
+                                }
+                            </div>
+                        </td>
+                        <td class="td2_2"></td>
+                    </tr>
+                </table>
+            </article>
+            <footer></footer>
+        </section>
+    </div>
+</body>
+

@@ -1,0 +1,92 @@
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+2014/10/8 上午 04:07:18產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 106] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+[2014/10/8] | [出庫作業] | [支號：9999993X] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+2014/10/8 上午 04:15:41產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 106] 
+
+2014/10/8 上午 04:15:48產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 106] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+2014/10/8 上午 04:16:37產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 106] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[1] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+接收讀碼機盤點人與作業參數：[N000005714]/FuncCode：[4] 
+
+盤點人條碼驗證結果：[True] 
+
+接收讀碼機盤點地參數：[A1] 
+
+盤點地條碼驗證結果：[True] 
+
+[2014/10/8] | [盤點作業] | [支號：9999993X][流水號：08043153] 
+

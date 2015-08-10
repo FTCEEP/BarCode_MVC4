@@ -1,0 +1,26 @@
+[2015/4/26] | [入庫作業訊息：B341507A，此筆資料，已入庫!!] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26095708] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26095814] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26100131] 
+
+2015/4/26 上午 10:04:27產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Models.DBOperation.ReceiptIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper, String sCustomer, String sCtlNo1, String sCtlNo2) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 331
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 271] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26101108] 
+
+[2015/4/26] | [入庫作業] | [支號：B351507A][流水號：26102550] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26102550] 
+
+[2015/4/26] | [入庫作業] | [支號：B351507A][流水號：26110301] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26110301] 
+
+[2015/4/26] | [入庫作業] | [支號：B351507A][流水號：26110543] 
+
+[2015/4/26] | [入庫作業] | [支號：B341507A][流水號：26110543] 
+

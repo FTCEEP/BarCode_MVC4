@@ -1,0 +1,54 @@
+[2015/1/16] | [入庫作業] | [支號：B311507AA][流水號：16091035] 
+
+[2015/1/16] | [入庫作業] | [支號：4911704B][流水號：16091050] 
+
+[2015/1/16] | [入庫作業訊息：System.Data.Entity.Validation.DbEntityValidationException: 一個或多個實體的驗證失敗。如需詳細資料，請參閱 'EntityValidationErrors' 屬性。
+   於 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   於 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   於 System.Data.Entity.DbContext.SaveChanges()
+   於 BarCode_MVC4.Models.DBOperation.ReceiptIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper) 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\Service\DBOperation.cs: 行 396] 
+
+[2015/1/16] | [入庫作業訊息：System.Data.Entity.Validation.DbEntityValidationException: 一個或多個實體的驗證失敗。如需詳細資料，請參閱 'EntityValidationErrors' 屬性。
+   於 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   於 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   於 System.Data.Entity.DbContext.SaveChanges()
+   於 BarCode_MVC4.Models.DBOperation.ReceiptIntoDB(String sStaffID, String sZoneNo, String sZoneSN, String sFuncCode, List`1 InfoList, String sCopper)] 
+
+[2015/1/16] | [入庫作業] | [支號：1254406A][流水號：16093052] 
+
+[2015/1/16] | [入庫作業] | [支號：B311507AA][流水號：16093152] 
+
+[2015/1/16] | [入庫作業] | [支號：4911704B][流水號：16093202] 
+
+[2015/1/16] | [入庫作業] | [支號：1255506A][流水號：16093209] 
+
+[2015/1/16] | [入庫作業] | [支號：B341587A2][流水號：16093218] 
+
+[2015/1/16] | [盤點作業訊息：B311507AA，庫存與實際盤點資料相符!!] 
+
+[2015/1/16] | [盤點作業訊息：4911704B，庫存與實際盤點資料相符!!] 
+
+[2015/1/16] | [盤點作業訊息：1254406A，庫存與實際盤點資料相符!!] 
+
+[2015/1/16] | [盤點作業訊息：1255506A，庫存與實際盤點資料相符!!] 
+
+[2015/1/16] | [盤點作業訊息：B341587A2，庫存與實際盤點資料相符!!] 
+
+[2015/1/16] | [盤點作業訊息：4911704B，庫存與實際盤點資料相符!!] 
+
+[2015/1/16] | [盤點作業] | [支號：B311507AA][流水號：16095456] 
+
+[2015/1/16] | [出庫作業] | [支號：B311507AA] 
+
+[2015/1/16] | [出庫作業] | [支號：4911704B] 
+
+[2015/1/16] | [出庫作業] | [支號：1254406A] 
+
+[2015/1/16] | [出庫作業] | [支號：1255506A] 
+
+[2015/1/16] | [出庫作業] | [支號：B341587A2] 
+
+[2015/1/16] | [入庫作業] | [支號：B311507AA][流水號：16105239] 
+
+[2015/1/16] | [盤點作業訊息：此銅箔的庫位資料比對不符!!] 
+

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/CSS/MasterStyle.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2014.1.528/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2014.1.528/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2014.1.528/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2014.1.528/kendo.dataviz.default.min.css" rel="stylesheet" />
+    <script src="~/Scripts/kendo/2014.1.528/cultures/kendo.culture.zh-TW.min.js"></script>
+    <script src="~/Scripts/kendo/2014.1.528/jquery.min.js"></script>
+    <script src="~/Scripts/kendo/2014.1.528/kendo.web.min.js"></script>
+    <script src="~/Scripts/kendo/2014.1.528/kendo.all.min.js"></script>
+    <script src="~/Scripts/kendo/2014.1.528/kendo.core.min.js"></script>
+    <script src="~/Scripts/kendo/2014.1.528/kendo.numerictextbox.min.js"></script>
+    <script src="~/Scripts/kendo/2014.1.528/kendo.datepicker.min.js"></script>
+    <script type="text/javascript">
+        //set the Kendo UI culture
+        kendo.culture("zh-TW");
+    </script>
+</head>
+<body>
+    <header class="header">
+        <table class="table">
+            <tr>
+                <td class="td1">盤點系統</td>
+                <td class="td2">
+                    <div class="logout">
+                        @*登出並指定要導向到login畫面*@
+                        @Html.ActionLink("登出", "Login", "BarCodeWebLogin")
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <section>
+        <header>
+            <ul id="menu">
+                <li>
+                </li>
+                <li>
+                </li>
+                <li>
+                </li>
+                <li>
+                    <ul></ul>
+                </li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+                    $("#menu").kendoMenu({
+                        dataSource:
+                        [
+                        {
+                            text: "庫存查詢",
+                            url: "../BarCodeWebReceipt/Index"
+                        },
+                        {
+                            text: "庫存異動查詢",
+                            url: "../BarCodeWebHistoryInventory/Index"
+                        },
+                        {
+                            text: "盤點差異查詢",
+                            url: "../BarCodeWebDiffInventory/Index"
+                        },
+                        {
+                            text: "基本資料建檔作業",
+                            items: [
+                               { text: "人員資料建檔", url: "../BarCodeWebStaff/Index" },
+                               { text: "庫位資料建檔", url: "../BarCodeWebZone/Index" },
+                               { text: "客戶資料建檔", url: "../BarCodeWebCustomer/Index" },
+                               { text: "包材資料建檔", url: "../BarCodeWebPackagingMaterial/Index" },
+                               { text: "註記資料建檔", url: "../BarCodeWebNote/Index" }
+                            ]
+                        },
+                        {
+                            text: "APP-版更",
+                            url: "../BarCodeAPPUpdate/Index"
+                        }
+                        ]
+                    })
+                });
+            </script>
+        </header>
+        <article>
+            <div id="Content">
+                @RenderBody()
+            </div>
+        </article>
+        <footer></footer>
+    </section>
+    <footer></footer>
+</body>
+</html>

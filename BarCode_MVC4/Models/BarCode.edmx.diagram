@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4996dae621be4de58ac8f892c6c4ee75" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="BarCodeModel.ClearInventory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BarCodeModel.HistoryInventory" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="BarCodeModel.ImportInventory" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Note" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="BarCodeModel.PackagingMaterial" Width="1.5" PointX="6.875" PointY="0.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Role" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Srnm" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Staff" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BarCodeModel.TempInventory" Width="1.5" PointX="9.125" PointY="0.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Zone" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="BarCodeModel.FunctionList" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Staff_View" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="BarCodeModel.ClearInventory_View" Width="1.5" PointX="3.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BarCodeModel.HistoryInventory_View" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="BarCodeModel.ImportInventory_View" Width="1.5" PointX="5.75" PointY="12.75" />
+        <EntityTypeShape EntityType="BarCodeModel.Inventory" Width="1.5" PointX="10.875" PointY="0.875" />
+        <EntityTypeShape EntityType="BarCodeModel.Inventory_View" Width="1.5" PointX="8.375" PointY="13.75" />
+        <EntityTypeShape EntityType="BarCodeModel.APKFile" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BarCodeModel.SysPara" Width="1.5" PointX="13.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

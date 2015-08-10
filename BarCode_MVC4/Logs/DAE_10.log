@@ -1,0 +1,7 @@
+2014/12/25 上午 10:56:23產生：[System.NullReferenceException: 並未將物件參考設定為物件的執行個體。
+   於 BarCode_MVC4.Controllers.App.BarCodeInfoController.Index() 於 c:\Users\N000148583\Desktop\BarCode_MVC4\BarCode_MVC4\Controllers\BarCodeInfo\BarCodeInfoController.cs: 行 87] 
+
+[2014/12/25] | [入庫作業] | [支號：4311704B][流水號：25105703] 
+
+[2014/12/25] | [入庫作業] | [支號：4311704B][流水號：25175219] 
+

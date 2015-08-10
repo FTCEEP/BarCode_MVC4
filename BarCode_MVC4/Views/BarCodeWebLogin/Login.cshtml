@@ -1,0 +1,57 @@
+﻿@model BarCode_MVC4.Models.LoginView
+
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title></title>
+    <link href="~/CSS/LoginStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <table class="table">
+            <tr>
+                <td class="td1">盤點系統</td>
+                <td class="td2"></td>
+            </tr>
+        </table>
+    </header>
+    <article>
+        <table class="table2">
+            <tr>
+                <td class="td2_1"></td>
+                <td class="td2_1">
+                    <div class="divbody">
+                        @using (Html.BeginForm())
+                        {
+                            <fieldset class="divfieldset">
+                                <legend>帳戶資訊</legend>
+                                <p>
+                                    使用者帳號：<br />
+                                    @Html.TextBoxFor(Model => Model.Account)<br />
+                                    @Html.ValidationMessageFor(Model => Model.Account)
+                                </p>
+                                <p>
+                                    密碼：<br />
+                                    @Html.PasswordFor(Model => Model.Password)<br />
+                                    @Html.ValidationMessageFor(Model => Model.Password)
+                                </p>
+                                <p>
+                                    <input type="submit" value="登入" />
+                                </p>
+                                <p>
+                                    @ViewData["ErrorMsg"]
+                                </p>
+                            </fieldset>
+                        }
+                    </div>
+                </td>
+                <td class="td2_1"></td>
+            </tr>
+        </table>
+    </article>
+    <footer></footer>
+</body>
+</html>

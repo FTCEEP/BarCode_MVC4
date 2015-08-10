@@ -1,0 +1,25 @@
+﻿.divStyle
+{
+	width:290px;
+	height:130px;
+}
+
+.p1Style
+{
+	width:275px;
+    height:20px;
+}
+
+.p2Style
+{
+	width:275px;
+	height:90px;
+}
+.fieldset
+ {
+	border: 1px solid #547CA6;
+}
+.InfoTable
+ {
+	text-align:left;
+}
